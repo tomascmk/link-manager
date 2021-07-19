@@ -1,0 +1,16 @@
+.dashboard {
+  &_container {
+    background-color: red;
+    display: flex;
+    &:nth-child(0) {
+      height: 100%;
+      width: 65%;
+    }
+    &:nth-child(1) {
+      height: 100%;
+      width: 35%;
+      position: absolute;
+      right: 0;
+    }
+  }
+}
