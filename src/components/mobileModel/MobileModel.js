@@ -8,7 +8,7 @@ export default function MobileModel(props) {
 
     return (
         <div className="mobileModel_container">
-            Hola
+            <div className="mobileModel_mobile"></div>
         </div>
     )
 }

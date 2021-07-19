@@ -1,3 +1,5 @@
+@import '../../variable.scss';
+
 .navContainer {
   display: flex;
   height: 100%;
@@ -8,7 +10,7 @@
   width: 60px;
   height: 100vh;
   color: rgb(214, 132, 132);
-  border-right: 1px solid #d7dce0;
+  border-right: 1px solid $secondaryGray;
   background-color: #ffffff;
   &_logo {
     height: 60px;
@@ -31,7 +33,7 @@
   display: flex;
   justify-content: left;
   align-items: center;
-  border-bottom: 1px solid #d7dce0;
+  border-bottom: 1px solid $secondaryGray;
   background-color: #ffffff;
 }
 

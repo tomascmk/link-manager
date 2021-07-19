@@ -1,7 +1,12 @@
+@import '../../variable.scss';
+
 .mobileModel {
   &_container {
-    background-color: black;
     height: 100%;
     width: 100%;
+    border-left: $secondaryGray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }

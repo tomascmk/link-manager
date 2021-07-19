@@ -10,7 +10,9 @@ export default function Dashboard(props) {
     return (
         <div className="dashboard_container">
             {props.children}
-            <MobileModel />
+            <div className="dashboard_mobile">
+                <MobileModel />
+            </div>
         </div>
     )
 }
