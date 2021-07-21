@@ -4,9 +4,86 @@
   &_container {
     height: 100%;
     width: 100%;
-    border-left: $secondaryGray;
+    border-left: 1px solid $secondaryGray;
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+  &_mobile {
+    height: 70vh;
+    max-height: 80%;
+    width: calc(80vh * 0.42);
+    border: calc(80vh * 0.023) solid #000000;
+    border-radius: (80vh * 0.08);
+    justify-content: center;
+    text-align: center;
+    background: no-repeat center;
+    background-size: cover;
+    overflow: hidden;
+  }
+  &_inner {
+    height: 100%;
+    overflow: scroll;
+    width: 100%;
+    z-index: 1;
+  }
+  &_list {
+    margin: 0px !important;
+    padding: 0px;
+    list-style: none;
+    overflow: scroll;
+    li {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0px calc(80vh * 0.0154);
+    }
+  }
+  &_ppContainer {
+    height: calc(80vh * 0.155);
+    width: calc(80vh * 0.155);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: calc(80vh * 0.0254) 0px calc(80vh * 0.0254) 0px;
+  }
+  &_pp {
+    height: calc(80vh * 0.125);
+    width: calc(80vh * 0.125);
+    background-color: #000000;
+    background: no-repeat center;
+    background-size: cover;
+    border-radius: 100%;
+  }
+  &_title {
+    margin: calc(80vh * 0.0046) 0px;
+    padding: 0px;
+    font-size: calc(80vh * 0.0246);
+  }
+  &_description {
+    padding: 0;
+    margin: calc(80vh * 0.0046) 0px;
+    font-size: calc(80vh * 0.02);
+  }
+  &_button {
+    text-decoration: none;
+    width: 100%;
+    padding: calc(80vh * 0.0231) 0px;
+    margin: calc(80vh * 0.01) 0px;
+    font-size: calc(80vh * 0.0246);
+    font-weight: 600;
+    &:hover {
+      background-color: transparent !important;
+      transition: 0.2s;
+    }
+  }
+  &_footer {
+    height: 6%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000000;
+    font-size: calc(80vh * 0.0246);
   }
 }

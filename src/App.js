@@ -17,11 +17,12 @@ function App() {
     <BrowserRouter>
       <ScrollToTop />
       <Switch>
-        {/** Rutas que necesitan el layout **/}
-        <Route path="/:path?">
+        <Route path="/">
           <Layout>
             <Switch>
-              <Route path="/dash">
+              <Route
+                path="/dash"
+              >
                 <Dashboard>
                   <Switch>
                     <Route
@@ -29,26 +30,9 @@ function App() {
                       path="/link"
                       component={LinkDashboard}
                     ></Route>
-                    <Route
-                      exact
-                      path="/settings"
-                      component={SettingsDashboard}
-                    ></Route>
-                    <Route
-                      exact
-                      path="/appearance"
-                      component={AppearanceDashboard}
-                    ></Route>
                   </Switch>
                 </Dashboard>
               </Route>
-              {/* <Route
-                exact
-                path="/"
-                component={LinkDashboard}
-                user={{}}
-                instance={'primary'}
-              ></Route> */}
             </Switch>
           </Layout>
         </Route>
