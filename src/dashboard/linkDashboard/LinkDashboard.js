@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import { ReactSVG } from 'react-svg';
 import Card from '../../components/card/Card';
-import config from '../../assets/img/config.svg'
+import thunder from '../../assets/img/thunder.svg'
 import './linkDashboard.scss'
 
 export default function LinkDashboard(props) {
@@ -15,7 +15,7 @@ export default function LinkDashboard(props) {
                         Add New Link
                     </button>
                     <button className="linkDash_buttons_config">
-                        <ReactSVG src={config} className="linkDash_buttons_config_svg" />
+                        <ReactSVG src={thunder} className="linkDash_buttons_config_svg" />
                     </button>
                 </div>
                 <div className="linkDash_cards">

@@ -31,7 +31,12 @@ export default function Card(props) {
 
                 </div>
                 <div className="card_content_right">
-                    <div className="card_content_right_up"></div>
+                    <div className="card_content_right_up">
+                        <label class="switch">
+                            <input type="checkbox" />
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
                     <div className="card_content_right_down">
                         <ReactSVG src={trash} className="card_content_trash" />
                     </div>
