@@ -12,6 +12,13 @@
     min-width: 10%;
     height: 100%;
     cursor: all-scroll;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &_icon {
+      width: 60%;
+      fill: $thirdGray;
+    }
   }
   &_content {
     width: 90%;
@@ -38,6 +45,30 @@
     &_right {
       width: 15%;
       height: 90%;
+      &_up {
+        height: 60%;
+        width: 80%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      &_down {
+        height: 40%;
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+      }
+    }
+    &_trash {
+      height: 30px;
+
+      & div,
+      svg {
+        cursor: pointer;
+        width: 20px;
+        height: 20px;
+      }
     }
   }
   &_link {

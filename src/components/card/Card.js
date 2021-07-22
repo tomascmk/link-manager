@@ -2,13 +2,16 @@ import React, { useState, useEffect } from 'react';
 import { useHistory, Link } from 'react-router-dom';
 import { ReactSVG } from 'react-svg';
 import './card.scss';
-import config from '../../assets/img/config.svg'
+import dragAndDrop from '../../assets/img/dragAndDrop.svg'
+import trash from '../../assets/img/trash.svg'
 
 export default function Card(props) {
 
     return (
         <div className="card">
-            <div className="card_drag"></div>
+            <div className="card_drag">
+                <ReactSVG src={dragAndDrop} className="card_drag_icon" />
+            </div>
             <div className="card_content">
                 <div className="card_content_left">
                     <div className="card_content_left_up">
@@ -27,7 +30,12 @@ export default function Card(props) {
                     <div className="card_content_left_down">hola</div>
 
                 </div>
-                <div className="card_content_right"></div>
+                <div className="card_content_right">
+                    <div className="card_content_right_up"></div>
+                    <div className="card_content_right_down">
+                        <ReactSVG src={trash} className="card_content_trash" />
+                    </div>
+                </div>
             </div>
         </div>
     )
