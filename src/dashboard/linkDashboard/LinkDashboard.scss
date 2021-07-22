@@ -49,8 +49,10 @@
   }
   &_cards {
     width: 100%;
-    display: flex;
+    max-height: 80%;
+    display: block;
     justify-content: center;
     margin-top: 35px;
+    overflow: scroll;
   }
 }

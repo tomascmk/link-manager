@@ -19,7 +19,9 @@ export default function LinkDashboard(props) {
                     </button>
                 </div>
                 <div className="linkDash_cards">
-
+                    <Card />
+                    <Card />
+                    <Card />
                     <Card />
                 </div>
             </div>

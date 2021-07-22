@@ -4,6 +4,8 @@ import { ReactSVG } from 'react-svg';
 import './card.scss';
 import dragAndDrop from '../../assets/img/dragAndDrop.svg'
 import trash from '../../assets/img/trash.svg'
+import star from '../../assets/img/star.svg'
+import image from '../../assets/img/image.svg'
 
 export default function Card(props) {
 
@@ -27,7 +29,10 @@ export default function Card(props) {
                             https://www.w3schools.com/cssref/tryit.asp?filename=trycss_cursor
                         </Link>
                     </div>
-                    <div className="card_content_left_down">hola</div>
+                    <div className="card_content_left_down">
+                        <ReactSVG src={star} className="contentIcon checked" />
+                        <ReactSVG src={image} className="contentIcon" />
+                    </div>
 
                 </div>
                 <div className="card_content_right">
