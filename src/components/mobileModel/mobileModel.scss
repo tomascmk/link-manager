@@ -32,6 +32,7 @@
     padding: 0px;
     list-style: none;
     overflow: scroll;
+    min-height: 94%;
     li {
       display: flex;
       justify-content: center;
@@ -71,9 +72,11 @@
     padding: calc(80vh * 0.0231) 0px;
     margin: calc(80vh * 0.01) 0px;
     font-size: calc(80vh * 0.0246);
+    border: 1px solid;
     font-weight: 600;
     &:hover {
       background-color: transparent !important;
+      border: 1px solid;
       transition: 0.2s;
     }
   }

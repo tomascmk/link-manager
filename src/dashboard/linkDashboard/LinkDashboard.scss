@@ -12,12 +12,12 @@
     width: 100%;
     margin-top: 40px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     background-color: aliceblue;
     &_add {
       height: 48px;
-      width: 70%;
+      width: calc(100% - 48px);
       max-height: 50px;
       background-color: #7b41ff;
       border: 0px;
@@ -46,5 +46,11 @@
         fill: white;
       }
     }
+  }
+  &_cards {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 35px;
   }
 }

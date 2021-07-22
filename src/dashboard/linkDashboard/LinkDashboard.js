@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import { ReactSVG } from 'react-svg';
-import './LinkDashboard.scss';
+import Card from '../../components/card/Card';
+import './linkDashboard.scss';
 import config from '../../assets/img/config.svg'
 
 export default function LinkDashboard(props) {
@@ -16,6 +17,10 @@ export default function LinkDashboard(props) {
                     <button className="linkDash_buttons_config">
                         <ReactSVG src={config} className="linkDash_buttons_config_svg" />
                     </button>
+                </div>
+                <div className="linkDash_cards">
+
+                    <Card />
                 </div>
             </div>
         </div>

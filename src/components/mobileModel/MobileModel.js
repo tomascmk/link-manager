@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { useHistory, Link } from 'react-router-dom';
-import logo from '../../logo.svg'
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+
 
 import './mobileModel.scss';
 
@@ -20,7 +20,7 @@ const components = [
     {
         "id": "button",
         "borderRadius": "",
-        "borderColor": "#000000",
+        "borderColor": "#38E09B",
         "backgroundColor": "#38E09B",
         "url": "https://www.google.com",
         "value": "Google"
@@ -63,7 +63,7 @@ export default function MobileModel(props) {
                             backgroundColor: component.backgroundColor ?? '#000000',
                             borderRadius: component.borderRadius ?? '0px',
                             border: component.border ?? '',
-                            borderColor: component.borderColor ?? ''
+                            borderColor: component.borderColor ?? 'transparent'
                         }}
                     >
                         {component.value}
