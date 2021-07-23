@@ -85,7 +85,7 @@ export default function MobileModel(props) {
             >
                 <div className="mobileModel_inner">
                     <ul className="mobileModel_list">
-                        {components.map(component => (<li>{getComponents(component)}</li>))}
+                        {components.map(component => (<li className="mobileModel_list_li">{getComponents(component)}</li>))}
                     </ul>
                     <div className="mobileModel_footer">
                         <h6>Made with Link Manager</h6>

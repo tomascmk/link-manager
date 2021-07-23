@@ -23,6 +23,9 @@
     display: flex;
     align-items: flex-end;
     justify-content: center;
+    &_inner {
+      height: fit-content;
+    }
   }
 }
 
@@ -35,6 +38,27 @@
   align-items: center;
   border-bottom: 1px solid $secondaryGray;
   background-color: #ffffff;
+  &_list {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 0px;
+    &_li {
+      min-height: 100%;
+      display: flex;
+      align-items: center;
+      list-style: none;
+      margin: 0px 10px;
+    }
+    &_btn {
+      text-decoration: none;
+      color: #000000;
+    }
+  }
+}
+.li-active {
+  border-bottom: 2px solid #000000;
 }
 
 .appContent {

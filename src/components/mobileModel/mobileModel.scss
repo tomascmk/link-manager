@@ -33,7 +33,7 @@
     list-style: none;
     overflow: scroll;
     min-height: 94%;
-    li {
+    &_li {
       display: flex;
       justify-content: center;
       align-items: center;

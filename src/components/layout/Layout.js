@@ -11,7 +11,9 @@ export default function Layout(props) {
     return (
         <div className="layout">
             <div className="navContainer">
-                <Sidebar />
+                {!props.registered && (
+                    <Sidebar />
+                )}
                 <Navbar />
             </div>
             <div className="appContent">
