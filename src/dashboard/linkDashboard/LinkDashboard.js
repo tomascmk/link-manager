@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import { ReactSVG } from 'react-svg';
 import Card from '../../components/card/Card';
-import thunder from '../../assets/img/thunder.svg'
-import './linkDashboard.scss'
+import thunder from '../../assets/img/thunder.svg';
+import './LinkDashboard.scss';
 
 export default function LinkDashboard(props) {
 

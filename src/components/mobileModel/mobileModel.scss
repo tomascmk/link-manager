@@ -26,6 +26,11 @@
     overflow: scroll;
     width: 100%;
     z-index: 1;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
   &_list {
     margin: 0px !important;
@@ -33,6 +38,11 @@
     list-style: none;
     overflow: scroll;
     min-height: 94%;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
     &_li {
       display: flex;
       justify-content: center;
