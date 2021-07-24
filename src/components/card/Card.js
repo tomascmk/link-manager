@@ -7,10 +7,9 @@ import trash from '../../assets/img/trash.svg'
 import star from '../../assets/img/star.svg'
 import image from '../../assets/img/image.svg'
 
-export default function Card(props) {
-
+export default function Card({ cardContent, deleteCard }) {
     return (
-        <div className="card">
+        <div className="card" id={`${cardContent.id}`}>
             <div className="card_drag">
                 <ReactSVG src={dragAndDrop} className="card_drag_icon" />
             </div>
@@ -43,7 +42,7 @@ export default function Card(props) {
                         </label>
                     </div>
                     <div className="card_content_right_down">
-                        <ReactSVG src={trash} className="card_content_trash" />
+                        <ReactSVG src={trash} className="card_content_trash" onClick={() => deleteCard(cardContent.id)} />
                     </div>
                 </div>
             </div>
