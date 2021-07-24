@@ -49,7 +49,6 @@ export default function MobileModel(props) {
             case 'description':
                 return <p className="mobileModel_description">{component.value}</p>
             case 'button':
-                console.log(`component.backgroundColor`, `calc(80vh * (${component.borderRadius} / 100vh))`)
                 return (
                     <Link
                         className="mobileModel_button"
