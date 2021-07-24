@@ -1,36 +1,52 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 
 import './mobileModel.scss';
 
-const components = [
+let componentsArr = [
     {
-        "id": "pp",
+        "type": "pp",
         "value": "https://assets.production.linktr.ee/ccc6ead3e8002b951f3fcf4adeb6d91dcf0d2e8b/images/background-styles/selector-waves.gif"
     },
     {
-        "id": "title",
+        "type": "title",
         "value": "Tomás Cormack"
     },
     {
-        "id": "description",
+        "type": "description",
         "value": "Hola soy tomas y esta es mi descripcion, Lorem ipsum dolor sit"
-    },
-    {
-        "id": "button",
-        "borderRadius": "",
-        "borderColor": "#38E09B",
-        "backgroundColor": "#38E09B",
-        "url": "https://www.google.com",
-        "value": "Google"
     }
 ]
 export default function MobileModel(props) {
     const [backgroundColor, setBackgroundColor] = useState('white')
+    const [components, setComponents] = useState([])
+    const [cards, setCards] = useState(props.cards)
+
+    useEffect(() => {
+        setMobileComponents()
+    }, [])
+
+    const setMobileComponents = () => {
+        debugger
+        if (props.cards.length > 0) {
+            props.cards.map(card => {
+                componentsArr.push({
+                    "type": "button",
+                    "id": card.id,
+                    "borderRadius": "",
+                    "borderColor": "#38E09B",
+                    "backgroundColor": "#38E09B",
+                    "url": card.url,
+                    "value": card.title
+                })
+            })
+        }
+        setComponents(componentsArr)
+    }
 
     const getComponents = (component) => {
-        switch (component.id) {
+        switch (component.type) {
             case 'pp':
                 return (
                     <div className="mobileModel_ppContainer">
@@ -49,6 +65,7 @@ export default function MobileModel(props) {
             case 'description':
                 return <p className="mobileModel_description">{component.value}</p>
             case 'button':
+                if (!component.active) return;
                 return (
                     <Link
                         className="mobileModel_button"
@@ -57,6 +74,7 @@ export default function MobileModel(props) {
                             state: {}
                         }}
                         target="_blank"
+                        id={component.id}
                         style={{
                             color: component.color ?? '#ffffff',
                             backgroundColor: component.backgroundColor ?? '#000000',

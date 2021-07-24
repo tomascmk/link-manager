@@ -6,7 +6,15 @@ import LinkDashboard from './linkDashboard/LinkDashboard';
 import './dashboard.scss';
 
 export default function Dashboard(props) {
+    const [cards, setCards] = useState([]);
+    const [c, setC] = useState(0);
+    useEffect(() => {
 
+    }, [cards])
+
+    const handleCards = (value) => {
+        setCards(value);
+    }
     return (
         <div className="dashboard_container">
             {/* {props.children} */}
@@ -15,10 +23,10 @@ export default function Dashboard(props) {
                 <h1>Holas</h1>
             </div> */}
             <div className="dashboard_dash">
-                <LinkDashboard />
+                <LinkDashboard handleCards={value => handleCards(value)} />
             </div>
             <div className="dashboard_mobile">
-                <MobileModel />
+                <MobileModel cards={cards} />
             </div>
         </div>
     )

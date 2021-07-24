@@ -39,10 +39,13 @@
       text-overflow: ellipsis;
       &_up {
         height: 60%;
+        display: flex;
+        align-items: center;
       }
       &_down {
-        height: 20%;
+        height: 40%;
         display: flex;
+        align-items: center;
       }
     }
     &_right {
@@ -77,6 +80,25 @@
     color: #000000;
     text-decoration: none;
     max-width: 50px;
+  }
+}
+.card-ul {
+  list-style: none;
+  padding: 0;
+  margin: 0px;
+  &_li {
+    margin: 5px 0px;
+    &_title {
+      border: 0px;
+      outline: none;
+      font-size: large;
+      font-weight: 600;
+    }
+    &_url {
+      border: 0px;
+      outline: none;
+      font-size: medium;
+    }
   }
 }
 .contentIcon > div > svg {
