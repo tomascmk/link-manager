@@ -28,7 +28,6 @@ export default function MobileModel(props) {
     }, [])
 
     const setMobileComponents = () => {
-        debugger
         if (props.cards.length > 0) {
             props.cards.map(card => {
                 componentsArr.push({

@@ -68,9 +68,9 @@ export default function Card({ cardContent, updateCard, deleteCard }) {
                 </div>
                 <div className="card_content_right">
                     <div className="card_content_right_up">
-                        <label class="switch">
+                        <label className="switch">
                             <input type="checkbox" onClick={() => handleActive(!cardContent.active)} />
-                            <span class="slider round"></span>
+                            <span className="slider round"></span>
                         </label>
                     </div>
                     <div className="card_content_right_down">

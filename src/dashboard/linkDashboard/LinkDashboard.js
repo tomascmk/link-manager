@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
+import { SortableContainer, SortableElement } from 'react-sortable-hoc';
+import arrayMove from 'array-move';
 import { ReactSVG } from 'react-svg';
 import _ from 'lodash';
 import Card from '../../components/card/Card';
 import thunder from '../../assets/img/thunder.svg';
 import './LinkDashboard.scss';
+
+import Draggable from 'react-draggable';
 
 const cardTemplate = {
     "title": "",
@@ -13,6 +17,23 @@ const cardTemplate = {
     "img": "",
     "active": false,
 }
+const SortableItem = SortableElement(({ value, updateCards, deleteCard }) => (
+    <Card
+        cardContent={value}
+        updateCard={updatedCard => updateCards(updatedCard)}
+        deleteCard={deleteId => deleteCard(deleteId)}
+    />
+));
+
+const SortableList = SortableContainer(({ items, updateCards, deleteCard }) => {
+    return (
+        <ul>
+            {items.map((value, index) => (
+                <SortableItem key={`item-${value}`} index={index} value={value} updateCards={updateCards} deleteCard={deleteCard} />
+            ))}
+        </ul>
+    );
+});
 
 export default function LinkDashboard(props) {
     const [cards, setCards] = useState([]);
@@ -33,7 +54,11 @@ export default function LinkDashboard(props) {
     useEffect(() => {
     }, [cards])
 
-
+    const onSortEnd = ({ oldIndex, newIndex }) => {
+        setCards(({ cards }) => ({
+            cards: arrayMove(cards, oldIndex, newIndex),
+        }));
+    };
     const newCard = () => {
         let newId = cards[0] && cards[0].id ? cards[0].id : 0;
         if (typeof newId === 'string') newId = Number.parseInt(newId, 10);
@@ -75,14 +100,8 @@ export default function LinkDashboard(props) {
                         <ReactSVG src={thunder} className="linkDash_buttons_config_svg" />
                     </button>
                 </div>
-                <div className="linkDash_cards">
-                    {cards.map(card => (
-                        <Card
-                            cardContent={card}
-                            updateCard={updatedCard => updateCards(updatedCard)}
-                            deleteCard={deleteId => deleteCard(deleteId)}
-                        />
-                    ))}
+                <div className="linkDash_cards" id="linkDash_cards">
+                    <SortableList items={cards} onSortEnd={pos => onSortEnd(pos)} updateCards={updatedCard => updateCards(updatedCard)} deleteCard={deletedCard => deleteCard(deletedCard)} />
                 </div>
             </div>
         </div>
