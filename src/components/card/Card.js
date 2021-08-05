@@ -1,12 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory, Link } from 'react-router-dom';
 import { ReactSVG } from 'react-svg';
+import {
+    sortableHandle,
+} from 'react-sortable-hoc';
 import _ from 'lodash';
 import './card.scss';
 import dragAndDrop from '../../assets/img/dragAndDrop.svg'
 import trash from '../../assets/img/trash.svg'
 import star from '../../assets/img/star.svg'
 import image from '../../assets/img/image.svg'
+
+const DragHandle = sortableHandle(() => (
+    <div className="card_drag">
+        <ReactSVG src={dragAndDrop} className="card_drag_icon" />
+    </div>
+));
 
 export default function Card({ cardContent, updateCard, deleteCard }) {
 
@@ -29,9 +38,7 @@ export default function Card({ cardContent, updateCard, deleteCard }) {
 
     return (
         <div className="card" id={`${cardContent.id}`}>
-            <div className="card_drag">
-                <ReactSVG src={dragAndDrop} className="card_drag_icon" />
-            </div>
+            <DragHandle />
             <div className="card_content">
                 <div className="card_content_left">
                     <div className="card_content_left_up">

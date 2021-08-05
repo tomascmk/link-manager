@@ -59,5 +59,12 @@
     &::-webkit-scrollbar {
       display: none;
     }
+    & > ul {
+      padding: 0px;
+    }
   }
+}
+
+.sortableDrag {
+  max-width: 20%;
 }

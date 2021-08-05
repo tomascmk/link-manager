@@ -29,7 +29,7 @@ const SortableList = SortableContainer(({ items, updateCards, deleteCard }) => {
     return (
         <ul>
             {items.map((value, index) => (
-                <SortableItem key={`item-${value}`} index={index} value={value} updateCards={updateCards} deleteCard={deleteCard} />
+                <SortableItem className="sortableDrag" key={`item-${value}`} index={index} value={value} updateCards={updateCards} deleteCard={deleteCard} />
             ))}
         </ul>
     );
@@ -101,7 +101,7 @@ export default function LinkDashboard(props) {
                     </button>
                 </div>
                 <div className="linkDash_cards" id="linkDash_cards">
-                    <SortableList items={cards} onSortEnd={pos => onSortEnd(pos)} updateCards={updatedCard => updateCards(updatedCard)} deleteCard={deletedCard => deleteCard(deletedCard)} />
+                    <SortableList items={cards} onSortEnd={pos => onSortEnd(pos)} updateCards={updatedCard => updateCards(updatedCard)} deleteCard={deletedCard => deleteCard(deletedCard)} useDragHandle />
                 </div>
             </div>
         </div>
