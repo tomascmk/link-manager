@@ -7,16 +7,15 @@ import _ from 'lodash';
 import Card from '../../components/card/Card';
 import thunder from '../../assets/img/thunder.svg';
 import './LinkDashboard.scss';
+// Redux
+import { useDispatch, useSelector } from 'react-redux';
+import {
+    SET_CARDS_DATA,
+} from '../../redux/types/managerTypes/managerTypes';
+// Json
+import cardTemplate from '../../utils/json/cardTemplate.json'
 
-import Draggable from 'react-draggable';
 
-const cardTemplate = {
-    "title": "",
-    "url": "",
-    "fav": false,
-    "img": "",
-    "active": false,
-}
 const SortableItem = SortableElement(({ value, updateCards, deleteCard }) => (
     <Card
         cardContent={value}
@@ -36,30 +35,33 @@ const SortableList = SortableContainer(({ items, updateCards, deleteCard }) => {
 });
 
 export default function LinkDashboard(props) {
-    const [cards, setCards] = useState([]);
+    const dispatch = useDispatch();
+    const { cardsData } = useSelector(state => state.managerReducers);
+
+    const [cards, setCards] = useState(cardsData);
     const [lastCard, setLastCard] = useState();
     const [id, setId] = useState('0')
 
     useEffect(() => {
+        console.log(`cardsData`, cardTemplate)
         if (cards.length > 0) {
 
         } else {
             let cardArr = [];
             cardArr.push({ id, ...cardTemplate })
             setCards(cardArr)
-            props.handleCards(cardArr)
         }
     }, [])
 
     useEffect(() => {
+        dispatch({ type: SET_CARDS_DATA, payload: cards });
     }, [cards])
 
     const onSortEnd = ({ oldIndex, newIndex }) => {
-        setCards(({ cards }) => ({
-            cards: arrayMove(cards, oldIndex, newIndex),
-        }));
+        setCards(arrayMove(cards, oldIndex, newIndex));
     };
     const newCard = () => {
+        debugger
         let newId = cards[0] && cards[0].id ? cards[0].id : 0;
         if (typeof newId === 'string') newId = Number.parseInt(newId, 10);
         let newCard = { id: _.toString(newId + 1), ...cardTemplate };
@@ -75,8 +77,7 @@ export default function LinkDashboard(props) {
         })
         setLastCard(card)
         setCards(cardsUpdated);
-
-        props.handleCards(cards)
+        dispatch({ type: SET_CARDS_DATA, payload: cardsUpdated });
     }
 
     const deleteCard = (deleteId) => {
@@ -86,7 +87,6 @@ export default function LinkDashboard(props) {
         if (cards.length === 0) {
             newCard()
         }
-        props.handleCards(cards)
     }
 
     return (

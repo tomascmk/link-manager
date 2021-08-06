@@ -20,7 +20,6 @@ const DragHandle = sortableHandle(() => (
 export default function Card({ cardContent, updateCard, deleteCard }) {
 
     useEffect(() => {
-        console.log(`cardContent`, cardContent)
     }, [])
 
     const handleChange = (event) => {

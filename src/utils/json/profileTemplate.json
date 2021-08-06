@@ -1,0 +1,16 @@
+{
+    "profile": [
+        {
+            "type": "pp",
+            "value": "https://assets.production.linktr.ee/ccc6ead3e8002b951f3fcf4adeb6d91dcf0d2e8b/images/background-styles/selector-waves.gif"
+        },
+        {
+            "type": "title",
+            "value": "Tomás Cormack"
+        },
+        {
+            "type": "description",
+            "value": "Hola soy tomas y esta es mi descripcion, Lorem ipsum dolor sit"
+        }
+    ]
+}
