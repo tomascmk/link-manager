@@ -4,7 +4,7 @@
   &_container {
     height: 100%;
     width: 100%;
-    border-left: 1px solid $secondaryGray;
+    border-left: 1px solid $black20;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -77,6 +77,7 @@
     font-size: calc(80vh * 0.02);
   }
   &_button {
+    position: relative;
     text-decoration: none;
     width: 100%;
     padding: calc(80vh * 0.0231) 0px;
@@ -88,6 +89,15 @@
       background-color: transparent !important;
       border: 2px solid;
       transition: 0.2s;
+    }
+    &_fav svg {
+      width: 25px;
+      height: 25px;
+      position: absolute;
+      top: -12px;
+      right: 0px;
+      transform: translate(-50%);
+      /* transform: rotate(35deg); */
     }
   }
   &_footer {

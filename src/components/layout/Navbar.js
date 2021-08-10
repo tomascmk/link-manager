@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory, Link } from 'react-router-dom';
+import { ReactSVG } from 'react-svg';
+import logo from '../../assets/img/logo.svg'
 
 import './layout.scss';
 
@@ -10,7 +12,7 @@ const optionObj = {
             "url": "/dash/links",
         },
         {
-            "label": "Appearance",
+            "label": "Styles",
             "url": "/dash/appearance",
         },
         {
@@ -29,6 +31,7 @@ export default function Navbar({ registered }) {
 
     return (
         <nav className="navbar">
+            <ReactSVG src={logo} className="logo_icon" />
             <ul className="navbar_list">
                 {options.map(option => (
                     <li className={`navbar_list_li ${pathName === option.url ? 'li-active' : ''}`}>

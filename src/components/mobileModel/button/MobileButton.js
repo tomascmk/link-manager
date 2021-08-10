@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { ReactSVG } from 'react-svg';
 // Redux
 import { useSelector } from 'react-redux';
+import fullHeart from '../../../assets/img/fullHeart.svg'
 import '../mobileModel.scss';
 
 
@@ -18,7 +20,7 @@ export default function MobileButton({ component }) {
 
     return (
         <Link
-            className="mobileModel_button"
+            className={`mobileModel_button`}
             to={{
                 pathname: `${component.url}`,
                 state: {}
@@ -35,6 +37,9 @@ export default function MobileButton({ component }) {
                 borderColor: stylestoUse.buttons.borderColor ?? 'transparent'
             }}
         >
+            {component.fav && (
+                <ReactSVG src={fullHeart} className="mobileModel_button_fav" />
+            )}
             {component.title}
         </Link>
     )

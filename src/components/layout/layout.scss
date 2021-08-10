@@ -10,7 +10,7 @@
   width: 60px;
   height: 100vh;
   color: rgb(214, 132, 132);
-  border-right: 1px solid $secondaryGray;
+  border-right: 1px solid $black20;
   background-color: #ffffff;
   &_logo {
     height: 60px;
@@ -32,18 +32,23 @@
 .navbar {
   width: 100%;
   height: 60px;
-  color: blue;
   display: flex;
   justify-content: left;
   align-items: center;
-  border-bottom: 1px solid $secondaryGray;
+  border-bottom: 1px solid $black20;
   background-color: #ffffff;
+  overflow: hidden;
+  position: relative;
   &_list {
     height: 100%;
+    width: 60%;
     display: flex;
+    justify-content: center;
     align-items: center;
     list-style: none;
-    margin: 0px;
+    padding: 0px;
+    border: 1px solid $black20;
+    border-left-width: 0px;
     &_li {
       min-height: 100%;
       display: flex;
@@ -57,14 +62,20 @@
     }
   }
 }
+.logo_icon {
+  position: absolute;
+  left: 15px;
+  & svg {
+    width: 30px;
+  }
+}
 .li-active {
-  border-bottom: 2px solid #000000;
+  border-bottom: 2px solid $black100;
 }
 
 .appContent {
   position: absolute;
   top: 60px;
-  left: 60px;
   height: calc(100vh - 60px);
-  width: calc(100vw - 70px);
+  width: 100vw; /* calc(100vw - 70px); */
 }
