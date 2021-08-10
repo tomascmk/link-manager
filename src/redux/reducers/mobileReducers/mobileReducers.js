@@ -9,10 +9,10 @@ import {
 const INITIAL_STATE = {
     mobileStyles: {
         "dash": {
-            "backgroundColor": "#000000"
+            "backgroundColor": "#ffffff"
         },
         "profile": {
-            "color": "#ffffff"
+            "color": "#000000"
         },
         "buttons": {
             "backgroundColor": "#000000",

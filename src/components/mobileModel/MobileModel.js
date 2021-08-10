@@ -18,14 +18,10 @@ import './mobileModel.scss';
 export default function MobileModel(props) {
     const dispatch = useDispatch();
     const { cardsData } = useSelector(state => state.managerReducers);
-    const { mobileStyles, mobileHoverStyles } = useSelector(state => state.mobileReducers);
-    const [backgroundColor, setBackgroundColor] = useState('white')
-    const [components, setComponents] = useState([])
+    const { mobileStyles } = useSelector(state => state.mobileReducers);
     const [profileData, setProfileData] = useState(profileTemplate)
     const [cards, setCards] = useState(cardsData)
-    const [onHoverStyle, setOnHoverStyle] = useState(mobileHoverStyles)
-    const [previewStyle, setPreviewStyle] = useState(mobileStyles)
-    const [stylestoUse, setStylesToUse] = useState(previewStyle)
+    const [stylestoUse, setStylesToUse] = useState(mobileStyles)
 
     useEffect(() => {
         /* setMobileComponents() */
@@ -59,9 +55,23 @@ export default function MobileModel(props) {
                     </div>
                 )
             case 'title':
-                return <h4 className="mobileModel_title">{component.value}</h4>
+                return <h4
+                    className="mobileModel_title"
+                    style={{
+                        color: stylestoUse.profile.color
+                    }}
+                >
+                    {component.value}
+                </h4>
             case 'description':
-                return <p className="mobileModel_description">{component.value}</p>
+                return <p
+                    className="mobileModel_description"
+                    style={{
+                        color: stylestoUse.profile.color
+                    }}
+                >
+                    {component.value}
+                </p>
             case 'button':
                 if (!component.active) return;
                 return (
@@ -77,7 +87,7 @@ export default function MobileModel(props) {
             <div
                 className="mobileModel_mobile"
                 style={{
-                    backgroundColor: backgroundColor,
+                    backgroundColor: stylestoUse.dash.backgroundColor,
                     backgroundImage: `url(${''})`
                 }}
             >
