@@ -22,7 +22,8 @@ export default function Dashboard(props) {
                 <h1>Holas</h1>
             </div> */}
             <div className="dashboard_dash">
-                <LinkDashboard /> {/* handleCards={value => handleCards(value)} */}
+                {/* <LinkDashboard />  */}{/* handleCards={value => handleCards(value)} */}
+                {props.children}
             </div>
             <div className="dashboard_mobile">
                 <MobileModel /> {/* cards={cards} */}
