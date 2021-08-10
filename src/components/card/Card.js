@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory, Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import { ReactSVG } from 'react-svg';
 import {
     sortableHandle,
@@ -10,6 +11,7 @@ import dragAndDrop from '../../assets/img/dragAndDrop.svg'
 import trash from '../../assets/img/trash.svg'
 import star from '../../assets/img/star.svg'
 import image from '../../assets/img/image.svg'
+import { TOAST_MSG } from '../../redux/types/toastTypes/toastTypes';
 
 const DragHandle = sortableHandle(() => (
     <div className="card_drag">
@@ -18,6 +20,7 @@ const DragHandle = sortableHandle(() => (
 ));
 
 export default function Card({ cardContent, updateCard, deleteCard }) {
+    const dispatch = useDispatch();
 
     useEffect(() => {
     }, [])
@@ -26,13 +29,28 @@ export default function Card({ cardContent, updateCard, deleteCard }) {
         let cardObj = { ...cardContent }
         let change = _.pick(cardObj, [`${event.target.id}`]);
         cardObj[_.keys(change)[0]] = event.target.value;
+        if ((cardObj.title === "" || cardObj.url === "") && cardObj.active) {
+            cardObj.active = false
+        }
         updateCard(cardObj)
     }
 
     const handleActive = (value) => {
+        debugger
         let cardObj = { ...cardContent }
-        cardObj.active = value;
-        updateCard(cardObj)
+        if (cardObj.title === "" || cardObj.url === "") {
+            dispatch({
+                type: TOAST_MSG,
+                payload: {
+                    type: 'error',
+                    msg:
+                        'El titulo y el link deben completarse.'
+                }
+            });
+        } else {
+            cardObj.active = value;
+            updateCard(cardObj)
+        }
     }
 
     return (
@@ -74,9 +92,8 @@ export default function Card({ cardContent, updateCard, deleteCard }) {
                 </div>
                 <div className="card_content_right">
                     <div className="card_content_right_up">
-                        <label className="switch">
-                            <input type="checkbox" onClick={() => handleActive(!cardContent.active)} />
-                            <span className="slider round"></span>
+                        <label className={`switch${cardContent.active ? '_active' : ''}`} onClick={() => handleActive(!cardContent.active)} >
+                            <span className={`slider`}></span>
                         </label>
                     </div>
                     <div className="card_content_right_down">

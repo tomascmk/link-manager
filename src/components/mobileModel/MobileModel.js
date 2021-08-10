@@ -5,6 +5,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import {
     SET_CARDS_DATA,
 } from '../../redux/types/managerTypes/managerTypes';
+import {
+    SET_STYLES,
+    SET_HOVER_STYLES
+} from '../../redux/types/mobileTypes/mobileTypes';
+import MobileButton from './button/MobileButton';
 // Json
 import profileTemplate from '../../utils/json/profileTemplate.json'
 import './mobileModel.scss';
@@ -13,10 +18,14 @@ import './mobileModel.scss';
 export default function MobileModel(props) {
     const dispatch = useDispatch();
     const { cardsData } = useSelector(state => state.managerReducers);
+    const { mobileStyles, mobileHoverStyles } = useSelector(state => state.mobileReducers);
     const [backgroundColor, setBackgroundColor] = useState('white')
     const [components, setComponents] = useState([])
     const [profileData, setProfileData] = useState(profileTemplate)
     const [cards, setCards] = useState(cardsData)
+    const [onHoverStyle, setOnHoverStyle] = useState(mobileHoverStyles)
+    const [previewStyle, setPreviewStyle] = useState(mobileStyles)
+    const [stylestoUse, setStylesToUse] = useState(previewStyle)
 
     useEffect(() => {
         /* setMobileComponents() */
@@ -26,27 +35,13 @@ export default function MobileModel(props) {
     }, [cards])
 
     useEffect(() => {
-        debugger
         console.log(`cardsData`, cardsData)
         setCards(cardsData)
     }, [cardsData])
 
-    /*     const setMobileComponents = () => {
-            let profileData = profileTemplate;
-            debugger
-            if (cards.length > 0) {
-                cards.map(card => {
-                    debugger
-                    profileData.push({
-                        ...card,
-                        "borderRadius": "",
-                        "borderColor": "#38E09B",
-                        "backgroundColor": "#38E09B",
-                    })
-                })
-            }
-            setComponents(profileData)
-        } */
+    const setMobileStyles = (value) => {
+        setStylesToUse(value)
+    }
 
     const getComponents = (component) => {
         switch (component.type) {
@@ -68,27 +63,9 @@ export default function MobileModel(props) {
             case 'description':
                 return <p className="mobileModel_description">{component.value}</p>
             case 'button':
-                debugger
                 if (!component.active) return;
                 return (
-                    <Link
-                        className="mobileModel_button"
-                        to={{
-                            pathname: `${component.url}`,
-                            state: {}
-                        }}
-                        target="_blank"
-                        id={component.id}
-                        style={{
-                            color: component.color ?? '#ffffff',
-                            backgroundColor: component.backgroundColor ?? '#000000',
-                            borderRadius: component.borderRadius ?? '0px',
-                            border: component.border ?? '',
-                            borderColor: component.borderColor ?? 'transparent'
-                        }}
-                    >
-                        {component.title}
-                    </Link>
+                    <MobileButton component={component} />
                 )
             default:
                 break;

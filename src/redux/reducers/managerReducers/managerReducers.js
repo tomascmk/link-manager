@@ -3,7 +3,6 @@
 //Types
 import {
     SET_CARDS_DATA,
-    GET_CARDS_DATA
 } from '../../types/managerTypes/managerTypes';
 
 const INITIAL_STATE = {
@@ -13,9 +12,6 @@ const INITIAL_STATE = {
 export default (state = INITIAL_STATE, action) => {
     switch (action.type) {
         case SET_CARDS_DATA:
-            return { ...state, cardsData: action.payload };
-
-        case GET_CARDS_DATA:
             return { ...state, cardsData: action.payload };
 
         default:

@@ -61,10 +61,7 @@ export default function LinkDashboard(props) {
         setCards(arrayMove(cards, oldIndex, newIndex));
     };
     const newCard = () => {
-        debugger
-        let newId = cards[0] && cards[0].id ? cards[0].id : 0;
-        if (typeof newId === 'string') newId = Number.parseInt(newId, 10);
-        let newCard = { id: _.toString(newId + 1), ...cardTemplate };
+        let newCard = { id: _.toString(cards.length > 0 ? cards.length : 0), ...cardTemplate };
         setCards([newCard, ...cards])
     }
 
