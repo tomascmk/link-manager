@@ -36,7 +36,6 @@ export default function Card({ cardContent, updateCard, deleteCard }) {
     }
 
     const handleActive = (value) => {
-        debugger
         let cardObj = { ...cardContent }
         if (cardObj.title === "" || cardObj.url === "") {
             dispatch({
