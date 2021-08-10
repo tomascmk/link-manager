@@ -9,7 +9,8 @@ import _ from 'lodash';
 import './card.scss';
 import dragAndDrop from '../../assets/img/dragAndDrop.svg'
 import trash from '../../assets/img/trash.svg'
-import star from '../../assets/img/star.svg'
+import emptyHeart from '../../assets/img/emptyHeart.svg'
+import fullHeart from '../../assets/img/fullHeart.svg'
 import image from '../../assets/img/image.svg'
 import { TOAST_MSG } from '../../redux/types/toastTypes/toastTypes';
 
@@ -51,6 +52,12 @@ export default function Card({ cardContent, updateCard, deleteCard }) {
             updateCard(cardObj)
         }
     }
+    const handleChecked = (value) => {
+        let cardObj = { ...cardContent }
+        cardObj.fav = value;
+        updateCard(cardObj)
+
+    }
 
     return (
         <div className="card" id={`${cardContent.id}`}>
@@ -84,7 +91,7 @@ export default function Card({ cardContent, updateCard, deleteCard }) {
                         </ul>
                     </div>
                     <div className="card_content_left_down">
-                        <ReactSVG src={star} className="contentIcon checked" />
+                        <ReactSVG src={cardContent.fav ? fullHeart : emptyHeart} className={`contentIcon`} onClick={() => handleChecked(!cardContent.fav)} />
                         <ReactSVG src={image} className="contentIcon" />
                     </div>
 

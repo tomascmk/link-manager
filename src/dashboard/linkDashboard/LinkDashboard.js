@@ -5,7 +5,7 @@ import arrayMove from 'array-move';
 import { ReactSVG } from 'react-svg';
 import _ from 'lodash';
 import Card from '../../components/card/Card';
-import thunder from '../../assets/img/thunder.svg';
+import save from '../../assets/img/save.svg';
 import './LinkDashboard.scss';
 // Redux
 import { useDispatch, useSelector } from 'react-redux';
@@ -93,8 +93,9 @@ export default function LinkDashboard(props) {
                     <button className="linkDash_buttons_add" onClick={() => newCard()}>
                         Add New Link
                     </button>
-                    <button className="linkDash_buttons_config">
-                        <ReactSVG src={thunder} className="linkDash_buttons_config_svg" />
+                    <button className="linkDash_buttons_save">
+                        Save
+                        {/*  <ReactSVG src={save} className="linkDash_buttons_save_svg" /> */}
                     </button>
                 </div>
                 <div className="linkDash_cards" id="linkDash_cards">
