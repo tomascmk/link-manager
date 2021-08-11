@@ -9,7 +9,7 @@ import Layout from "./components/layout/Layout";
 import Dashboard from "./dashboard/Dashboard";
 import LinkDashboard from "./dashboard/linkDashboard/LinkDashboard";
 import SettingsDashboard from "./dashboard/settingsDashboard/SettingsDashboard";
-import AppearanceDashboard from "./dashboard/appearanceDashboard/AppearanceDashboard";
+import styleDashboard from "./dashboard/styleDashboard/styleDashboard";
 
 const routes = [
   {
@@ -26,7 +26,7 @@ const routes = [
           },
           {
             path: "/dash/appearance",
-            component: AppearanceDashboard,
+            component: styleDashboard,
           },
           {
             path: "/dash/settings",

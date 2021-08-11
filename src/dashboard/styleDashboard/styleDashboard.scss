@@ -1,0 +1,13 @@
+.styleDash {
+  &_container {
+    display: flex;
+    height: 100%;
+    justify-content: center;
+  }
+  &_inner {
+    width: 70%;
+    max-height: 95%;
+    overflow: scroll;
+    padding-top: 20px;
+  }
+}

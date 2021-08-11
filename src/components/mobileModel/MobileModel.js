@@ -31,7 +31,6 @@ export default function MobileModel(props) {
     }, [cards])
 
     useEffect(() => {
-        console.log(`cardsData`, cardsData)
         setCards(cardsData)
     }, [cardsData])
 

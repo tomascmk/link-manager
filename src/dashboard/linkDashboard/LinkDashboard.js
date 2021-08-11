@@ -43,7 +43,6 @@ export default function LinkDashboard(props) {
     const [id, setId] = useState('0')
 
     useEffect(() => {
-        console.log(`cardsData`, cardTemplate)
         if (cards.length > 0) {
 
         } else {
