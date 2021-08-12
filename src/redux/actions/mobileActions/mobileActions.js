@@ -4,7 +4,7 @@ import {
     SET_HOVER_STYLES,
 } from '../../types/managerTypes/managerTypes';
 
-export const setStyles = value => dispatch => {
+export const setDashStyles = value => dispatch => {
     try {
         dispatch({
             type: SET_STYLES,
@@ -14,7 +14,7 @@ export const setStyles = value => dispatch => {
         console.log(error);
     }
 };
-export const setHoverStyles = value => dispatch => {
+export const setHoverDashStyles = value => dispatch => {
     try {
         dispatch({
             type: SET_HOVER_STYLES,

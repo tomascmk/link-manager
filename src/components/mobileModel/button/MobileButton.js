@@ -12,10 +12,10 @@ export default function MobileButton({ component }) {
     const { mobileStyles, mobileHoverStyles } = useSelector(state => state.mobileReducers);
     const [onHoverStyle, setOnHoverStyle] = useState(mobileHoverStyles)
     const [previewStyle, setPreviewStyle] = useState(mobileStyles)
-    const [stylestoUse, setStylesToUse] = useState(previewStyle)
+    const [stylestoUse, setDashStylesToUse] = useState(previewStyle)
 
     const setMobileStyles = (value) => {
-        setStylesToUse(value)
+        setDashStylesToUse(value)
     }
 
     return (

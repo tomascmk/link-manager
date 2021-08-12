@@ -1,12 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import {
+    SET_STYLES,
+    SET_HOVER_STYLES
+} from '../../redux/types/mobileTypes/mobileTypes';
 
 import './styleCards.scss'
 
 export default function StyleCards({ dash }) {
+    const dispatch = useDispatch();
+    const { mobileStyles } = useSelector(state => state.mobileReducers);
 
-    const setStyles = (style, color) => {
-        console.log(`style`, style, `${color}`)
+    const setDashStyles = (style, color) => {
+        dispatch({ type: SET_STYLES, payload: { type: style.class, value: color, from: style.from } });
+
     }
 
     const getSection = (sect) => {
@@ -20,7 +28,7 @@ export default function StyleCards({ dash }) {
                                 id={color}
                                 style={{ backgroundColor: `${color}` }}
                                 className={`colorBox_btn`}
-                                onClick={() => setStyles(sect.class, color)}
+                                onClick={() => setDashStyles(sect, color)}
                             />
                         ))}
                     </div>

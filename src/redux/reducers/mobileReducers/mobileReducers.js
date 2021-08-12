@@ -3,13 +3,14 @@
 //Types
 import {
     SET_STYLES,
-    SET_HOVER_STYLES
+    SET_HOVER_STYLES,
 } from '../../types/mobileTypes/mobileTypes';
 
 const INITIAL_STATE = {
     mobileStyles: {
         "dash": {
-            "backgroundColor": "#ffffff"
+            "backgroundColor": "#ffffff",
+            "color": "#000000"
         },
         "profile": {
             "color": "#000000"
@@ -24,7 +25,8 @@ const INITIAL_STATE = {
     },
     mobileHoverStyles: {
         "dash": {
-            "backgroundColor": "#000000"
+            "backgroundColor": "#000000",
+            "color": "#000000"
         },
         "profile": {
             "color": "#ffffff"
@@ -43,14 +45,13 @@ export default (state = INITIAL_STATE, action) => {
     switch (action.type) {
         case SET_STYLES:
             let stylesObj = state.mobileStyles;
-            stylesObj.styles = action.payload;
+            stylesObj[`${action.payload.from}`][`${action.payload.type}`] = action.payload.value;
             return { ...state, mobileStyles: stylesObj };
 
         case SET_HOVER_STYLES:
             let hoverStylesObj = state.mobileHoverStyles;
-            hoverStylesObj.hoverStyles = action.payload;
+            hoverStylesObj.dash[`${action.payload.type}`] = action.payload.value;
             return { ...state, mobileHoverStyles: hoverStylesObj };
-
         default:
             return state;
     }

@@ -2,31 +2,43 @@
     {
         "title": "Background Color",
         "type": "color",
-        "class": "background",
-        "values": ["#000000", "#064ada", "#d91e27","#000002", "#064adb", "#d91e23","#000001", "#064adx", "#d91e24","#000006", "#064ads", "#d91e24","#000000", "#064aoa", "#d91e29"]
+        "class": "backgroundColor",
+        "from": "dash",
+        "values": ["#000000", "#064ada", "#ffffff", "#d91e27","#000002", "#064adb", "#d91e23","#000001", "#064adx", "#d91e24","#000006", "#064ads", "#d91e24","#000000", "#064aoa", "#d91e29"]
     },
     {
         "title": "Font Family",
         "type": "font",
         "class": "font-family",
+        "from": "dash",
         "values": []
     },
     {
         "title": "Font Color",
         "type": "color",
         "class": "color",
-        "values": ["#000000", "#064ada", "#d91e27"]
+        "from": "profile",
+        "values": ["#000000", "#064ada", "#d91e27", "#ffffff"]
     },
     {
         "title": "Buttons Style",
         "type": "button",
-        "class": "button-radius",
+        "class": "borderRadius",
+        "from": "buttons",
         "values": []
     },
     {
         "title": "Buttons Color",
         "type": "color",
-        "class": "button-color",
-        "values": ["#000000", "#064ada", "#d91e27"]
+        "class": "backgroundColor",
+        "from": "buttons",
+        "values": ["#000000", "#064ada", "#d91e27", "#ffffff"]
+    },
+    {
+        "title": "Buttons Font Color",
+        "type": "color",
+        "class": "color",
+        "from": "buttons",
+        "values": ["#000000", "#064ada", "#d91e27", "#ffffff"]
     }
 ]

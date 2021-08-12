@@ -2,13 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 // Redux
 import { useDispatch, useSelector } from 'react-redux';
-import {
-    SET_CARDS_DATA,
-} from '../../redux/types/managerTypes/managerTypes';
-import {
-    SET_STYLES,
-    SET_HOVER_STYLES
-} from '../../redux/types/mobileTypes/mobileTypes';
 import MobileButton from './button/MobileButton';
 // Json
 import profileTemplate from '../../utils/json/profileTemplate.json'
@@ -16,12 +9,12 @@ import './mobileModel.scss';
 
 
 export default function MobileModel(props) {
-    const dispatch = useDispatch();
+
     const { cardsData } = useSelector(state => state.managerReducers);
     const { mobileStyles } = useSelector(state => state.mobileReducers);
     const [profileData, setProfileData] = useState(profileTemplate)
     const [cards, setCards] = useState(cardsData)
-    const [stylestoUse, setStylesToUse] = useState(mobileStyles)
+    const [stylestoUse, setDashStylesToUse] = useState(mobileStyles)
 
     useEffect(() => {
         /* setMobileComponents() */
@@ -33,10 +26,6 @@ export default function MobileModel(props) {
     useEffect(() => {
         setCards(cardsData)
     }, [cardsData])
-
-    const setMobileStyles = (value) => {
-        setStylesToUse(value)
-    }
 
     const getComponents = (component) => {
         switch (component.type) {
@@ -86,6 +75,7 @@ export default function MobileModel(props) {
             <div
                 className="mobileModel_mobile"
                 style={{
+                    color: stylestoUse.dash.color,
                     backgroundColor: stylestoUse.dash.backgroundColor,
                     backgroundImage: `url(${''})`
                 }}
