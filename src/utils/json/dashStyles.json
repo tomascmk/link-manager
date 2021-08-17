@@ -2,43 +2,49 @@
     {
         "title": "Background Color",
         "type": "color",
-        "class": "backgroundColor",
-        "from": "dash",
-        "values": ["#000000", "#064ada", "#ffffff", "#d91e27","#000002", "#064adb", "#d91e23","#000001", "#064adx", "#d91e24","#000006", "#064ads", "#d91e24","#000000", "#064aoa", "#d91e29"]
+        "class": ["backgroundColor"],
+        "from": ["dash"],
+        "hover": false,
+        "values": ["#061343", "#071f80", "#052fac", "#064ada","#0361ff", "#428cff", "#6da7ff","#97c1ff", "#c9deff", "#edf4ff","#000006", "#000000", "#161616","#262626", "#393939", "#525252","#6f6f6f", "#8d8d8d", "#a8a8a8","#c6c6c6", "#e0e0e0", "#f4f4f4", "#d91e27","#ff832b", "#fddb6a", "#1a8038"]
     },
     {
         "title": "Font Family",
         "type": "font",
-        "class": "font-family",
-        "from": "dash",
-        "values": []
+        "class": ["fontFamily"],
+        "from": ["dash", "buttons", "profile"],
+        "hover": true,
+        "values": ["Roboto", "STIX Two Text", "Atkinson Hyperlegible", "Georama", "Open Sans", "'MonteCarlo', cursive","Noto Sans JP", "Lato", "Montserrat", "Poppins", "Ubuntu", "'WindSong', cursive"]
     },
     {
         "title": "Font Color",
         "type": "color",
-        "class": "color",
-        "from": "profile",
-        "values": ["#000000", "#064ada", "#d91e27", "#ffffff"]
+        "class": ["color"],
+        "from": ["profile"],
+        "hover": true,
+        "values": ["#061343", "#071f80", "#052fac", "#064ada","#0361ff", "#428cff", "#6da7ff","#97c1ff", "#c9deff", "#edf4ff","#000006", "#000000", "#161616","#262626", "#393939", "#525252","#6f6f6f", "#8d8d8d", "#a8a8a8","#c6c6c6", "#e0e0e0", "#f4f4f4", "#d91e27","#ff832b", "#fddb6a", "#1a8038"]
     },
     {
         "title": "Buttons Style",
         "type": "button",
-        "class": "borderRadius",
-        "from": "buttons",
-        "values": []
+        "class": ["borderRadius"],
+        "from": ["buttons"],
+        "hover": true,
+        "values": ["0px", "3px", "5px", "10px", "15px", "20px", "50%"]
     },
     {
         "title": "Buttons Color",
         "type": "color",
-        "class": "backgroundColor",
-        "from": "buttons",
-        "values": ["#000000", "#064ada", "#d91e27", "#ffffff"]
+        "class": ["backgroundColor", "borderColor"],
+        "from": ["buttons"],
+        "hover": true,
+        "values": ["#061343", "#071f80", "#052fac", "#064ada","#0361ff", "#428cff", "#6da7ff","#97c1ff", "#c9deff", "#edf4ff","#000006", "#000000", "#161616","#262626", "#393939", "#525252","#6f6f6f", "#8d8d8d", "#a8a8a8","#c6c6c6", "#e0e0e0", "#f4f4f4", "#d91e27","#ff832b", "#fddb6a", "#1a8038"]
     },
     {
         "title": "Buttons Font Color",
         "type": "color",
-        "class": "color",
-        "from": "buttons",
-        "values": ["#000000", "#064ada", "#d91e27", "#ffffff"]
+        "class": ["color"],
+        "from": ["buttons"],
+        "hover": true,
+        "values": ["#061343", "#071f80", "#052fac", "#064ada","#0361ff", "#428cff", "#6da7ff","#97c1ff", "#c9deff", "#edf4ff","#000006", "#000000", "#161616","#262626", "#393939", "#525252","#6f6f6f", "#8d8d8d", "#a8a8a8","#c6c6c6", "#e0e0e0", "#f4f4f4", "#d91e27","#ff832b", "#fddb6a", "#1a8038"]
     }
 ]

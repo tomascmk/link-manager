@@ -1,7 +1,9 @@
 @import '../../variable.scss';
 
-.colorBox {
-  &_container {
+.colorBox,
+.fontBox,
+.btnBox {
+  &_colorContainer {
     max-height: 80%;
     padding: 5%;
     border-radius: 5px;
@@ -10,7 +12,30 @@
     gap: 1rem;
     /* grid-auto-rows: 30px; */
     grid-template-columns: repeat(auto-fill, minmax(3rem, 1fr));
-    background: $black10;
+    background: #ffffff;
+    overflow: scroll;
+  }
+  &_fontContainer {
+    max-height: 80%;
+    padding: 5%;
+    border-radius: 5px;
+    display: grid;
+    justify-items: center;
+    gap: 3rem;
+    /* grid-auto-rows: 30px; */
+    grid-template-columns: repeat(auto-fill, minmax(4rem, 1fr));
+    background: #ffffff;
+    overflow: scroll;
+  }
+  &_btnContainer {
+    max-height: 80%;
+    padding: 5%;
+    border-radius: 5px;
+    display: grid;
+    justify-items: center;
+    gap: 4rem;
+    grid-template-columns: repeat(auto-fill, minmax(7rem, 1fr));
+    background: #ffffff;
     overflow: scroll;
   }
   &_btn {
@@ -20,5 +45,32 @@
     border-width: 2px;
     border-color: $black100;
     cursor: pointer;
+  }
+  &_fontBtn {
+    width: 80px;
+    height: 80px;
+    border: solid 1px $black40;
+    border-radius: 3px;
+    background-color: #ffffff;
+    font-size: x-large;
+    cursor: pointer;
+  }
+  &_btnBtn {
+    width: 160px;
+    height: 50px;
+    border: solid 3px $black100;
+    border-radius: 3px;
+    background-color: #ffffff;
+    cursor: pointer;
+    &_description {
+      margin: 0px;
+      font-size: medium;
+      font-weight: 200;
+      color: $black100;
+    }
+  }
+  &_example {
+    margin: 5px 0px 0px 0px;
+    text-align: center;
   }
 }

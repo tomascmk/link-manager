@@ -18,7 +18,6 @@ const INITIAL_STATE = {
         "buttons": {
             "backgroundColor": "#000000",
             "color": "#ffffff",
-            "borderColor": "#000000",
             "borderRadius": "0px",
             "border": "1px solid"
         }
@@ -45,12 +44,20 @@ export default (state = INITIAL_STATE, action) => {
     switch (action.type) {
         case SET_STYLES:
             let stylesObj = state.mobileStyles;
-            stylesObj[`${action.payload.from}`][`${action.payload.type}`] = action.payload.value;
-            return { ...state, mobileStyles: stylesObj };
+            let hoverObj = state.mobileHoverStyles;
+            action.payload.from.map(from => {
+                action.payload.type.map(type => {
+                    stylesObj[`${from}`][`${type}`] = action.payload.value;
+                    if (action.payload.hover) {
+                        hoverObj[`${from}`][`${type}`] = action.payload.value;
+                    }
+                })
+            })
+            return { ...state, mobileStyles: stylesObj, mobileHoverStyles: hoverObj };
 
         case SET_HOVER_STYLES:
             let hoverStylesObj = state.mobileHoverStyles;
-            hoverStylesObj.dash[`${action.payload.type}`] = action.payload.value;
+            hoverStylesObj.buttons.background = action.payload.value;
             return { ...state, mobileHoverStyles: hoverStylesObj };
         default:
             return state;

@@ -13,7 +13,7 @@ export default function StyleCards({ dash }) {
     const { mobileStyles } = useSelector(state => state.mobileReducers);
 
     const setDashStyles = (style, color) => {
-        dispatch({ type: SET_STYLES, payload: { type: style.class, value: color, from: style.from } });
+        dispatch({ type: SET_STYLES, payload: { type: style.class, value: color, from: style.from, hover: style.hover } });
 
     }
 
@@ -22,7 +22,7 @@ export default function StyleCards({ dash }) {
             case 'color':
 
                 return (
-                    <div className="colorBox_container">
+                    <div className="colorBox_colorContainer">
                         {sect.values.map(color => (
                             <button
                                 id={color}
@@ -36,10 +36,45 @@ export default function StyleCards({ dash }) {
                 )
             case 'font':
 
-                return <div> {`${sect.type}`} </div>
+                return (
+                    <div className="fontBox_fontContainer">
+                        {sect.values.map(font => (
+                            <div>
+                                <button
+                                    id={font}
+                                    style={{ fontFamily: `${font}` }}
+                                    className={`fontBox_fontBtn`}
+                                    onClick={() => setDashStyles(sect, font)}
+                                >
+                                    <h1 className="fontBox_example">
+                                        Aa
+                                    </h1>
+                                </button>
+                                <h6 className="fontBox_example">
+                                    {font}
+                                </h6>
+                            </div>
+                        ))}
+                    </div>
+
+                )
             case 'button':
 
-                return <div> {`${sect.type}`} </div>
+                return (
+                    <div className="btnBox_btnContainer">
+                        {sect.values.map(btn => (
+                            <div>
+                                <button
+                                    id={btn}
+                                    style={{ borderRadius: `${btn}` }}
+                                    className={`btnBox_btnBtn`}
+                                    onClick={() => setDashStyles(sect, btn)}
+                                >
+                                    <h6 className={`btnBox_btnBtn_description`}>{btn}</h6>
+                                </button>
+                            </div>
+                        ))}
+                    </div>)
 
             default:
                 break;

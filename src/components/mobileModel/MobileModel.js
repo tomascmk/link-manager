@@ -35,7 +35,8 @@ export default function MobileModel(props) {
                         <div
                             className="mobileModel_pp"
                             style={{
-                                backgroundImage: `url(${component.value})`
+                                backgroundImage: `url(${component.value})`,
+                                fontFamily: stylestoUse.profile.fontFamily,
                             }}
                         >
 
@@ -46,7 +47,8 @@ export default function MobileModel(props) {
                 return <h4
                     className="mobileModel_title"
                     style={{
-                        color: stylestoUse.profile.color
+                        color: stylestoUse.profile.color,
+                        fontFamily: stylestoUse.profile.fontFamily,
                     }}
                 >
                     {component.value}
@@ -55,7 +57,8 @@ export default function MobileModel(props) {
                 return <p
                     className="mobileModel_description"
                     style={{
-                        color: stylestoUse.profile.color
+                        color: stylestoUse.profile.color,
+                        fontFamily: stylestoUse.profile.fontFamily,
                     }}
                 >
                     {component.value}
@@ -86,7 +89,13 @@ export default function MobileModel(props) {
                         {cards.map(card => (<li className="mobileModel_list_li">{getComponents(card)}</li>))}
                     </ul>
                     <div className="mobileModel_footer">
-                        <h6>Made with Link Manager</h6>
+                        <h6
+                            style={{
+                                color: stylestoUse.dash.color
+                            }}
+                        >
+                            Made with Link Manager
+                        </h6>
                     </div>
                 </div>
             </div>

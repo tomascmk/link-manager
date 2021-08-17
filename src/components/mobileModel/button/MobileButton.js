@@ -34,7 +34,8 @@ export default function MobileButton({ component }) {
                 backgroundColor: stylestoUse.buttons.backgroundColor ?? '#000000',
                 borderRadius: stylestoUse.buttons.borderRadius ?? '0px',
                 border: stylestoUse.buttons.border ?? '',
-                borderColor: stylestoUse.buttons.borderColor ?? 'transparent'
+                borderColor: stylestoUse.buttons.borderColor ?? 'transparent',
+                fontFamily: stylestoUse.buttons.fontFamily,
             }}
         >
             {component.fav && (
