@@ -11,6 +11,7 @@ import './styleCards.scss'
 export default function StyleCards({ dash }) {
     const dispatch = useDispatch();
     const { mobileStyles } = useSelector(state => state.mobileReducers);
+    const [colorButtonSelected, setColorButtonSelected] = useState(undefined)
 
     const setDashStyles = (style, color) => {
         dispatch({ type: SET_STYLES, payload: { type: style.class, value: color, from: style.from, hover: style.hover } });
@@ -31,6 +32,7 @@ export default function StyleCards({ dash }) {
                                 onClick={() => setDashStyles(sect, color)}
                             />
                         ))}
+                        <input id="colorButtonSelected" type="color" onChange={event => setDashStyles(sect, event.currentTarget.value)} />
                     </div>
 
                 )
