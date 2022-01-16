@@ -4,6 +4,7 @@ import { ReactSVG } from 'react-svg';
 import logo from '../../assets/img/logo.svg'
 
 import './layout.scss';
+import { NavbarLink } from './NavbarLink';
 
 const optionObj = {
     "registered": [
@@ -48,6 +49,7 @@ export default function Navbar({ registered }) {
                     </li>
                 ))}
             </ul>
+            <NavbarLink />
         </nav>
     )
 }

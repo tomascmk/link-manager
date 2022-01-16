@@ -61,6 +61,24 @@
       color: #000000;
     }
   }
+  &_link{
+    &_container {
+      width: 40%;
+      height: 100%;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      &_url{
+        cursor: pointer;
+        color: #B9BFC5;
+      };
+      &_btn{
+        width: 100px;
+        height: 40px;
+        cursor: pointer;
+      }
+    }
+  }
 }
 .logo_icon {
   position: absolute;
